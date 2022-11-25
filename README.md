@@ -1,4 +1,5 @@
-# website
 base from https://github.com/codewithsadee/vcard-personal-portfolio
 
-website:
+
+![GitHub repo size](https://img.shields.io/github/repo-size/iamkredig/website)
+
