@@ -35,7 +35,8 @@
    */
 
   /* font-family */
-  --ff-poppins: 'Poppins', sans-serif;
+  --ff-headline: 'Alegreya Sans SC', sans-serif;
+  --ff-text: 'Hind Madurai', sans-serif;
 
   /* font-size */
   --fs-1: 24px;
@@ -48,10 +49,13 @@
   --fs-8: 11px;
 
   /* font-weight */
+  --fw-100: 100;  
+  --fw-200: 200;
   --fw-300: 300;
   --fw-400: 400;
   --fw-500: 500;
   --fw-600: 600;
+  --fw-700: 700;
 
 
 
@@ -63,7 +67,6 @@
   --transition-2: 0.5s ease-in-out;
 
 }
-
 
 
 
@@ -99,12 +102,7 @@ button {
 
 :focus { outline-color: var(--violett-accent); }
 
-html { font-family: var(--ff-poppins); }
-
 body { background: var( --bg-1); }
-
-
-
 
 
 /*-----------------------------------*\
@@ -151,8 +149,6 @@ article {
   z-index: -1;
 }
 
-
-
 article { display: none; }
 
 article.active {
@@ -170,7 +166,7 @@ article.active {
 .h4,
 .h5 {
   color: var(--white-2);
-
+  font-family: var(--ff-headline);
 }
 
 .h2 { font-size: var(--fs-1); }
@@ -376,7 +372,8 @@ main {
 .info-content .name {
   color: var(--white-2);
   font-size: var(--fs-3);
-  font-weight: var(--fw-500);
+  font-weight: var(--fw-600);
+  font-family: var(--ff-headline);
   letter-spacing: -0.25px;
   margin-bottom: 10px;
 }
@@ -384,8 +381,9 @@ main {
 .info-content .title {
   color: var(--white-1);
   background: var(--violett-accent-gradient);
+  font-family: var(--ff-text);
   font-size: var(--fs-8);
-  font-weight: var(--fw-300);
+  font-weight: var(--fw-500);
   width: max-content;
   padding: 3px 12px;
   border-radius: 8px;
@@ -406,8 +404,8 @@ main {
 }
 
 .contact-button {
-  max-width: calc(100% - 30px);
-  width: calc(100% - 30px);
+  /* max-width: calc(100% - 30px);
+  width: calc(100% - 30px);*/
   border-radius: 10px;
   background-color: var(--border);
 
@@ -428,13 +426,16 @@ main {
 .contact-title {
   color: var(--light-gray-70);
   font-size: var(--fs-8);
+  font-weight: var(--fw-500);
+  font-family: var(--ff-text);
   text-transform: uppercase;
   margin-bottom: 2px;
 }
 
-.contact-info :is(.contact-link, time, address) {
+.contact-info :is(.contact-link) {
   color: var(--white-2);
   font-size: var(--fs-7);
+  font-family: var(--ff-text);
 }
 
 .contact-info address { font-style: normal; }
@@ -465,8 +466,10 @@ main {
 }
 
 .navbar-link {
-  color: var(--light-gray);
-  font-size: var(--fs-8);
+  color: var(--light-gray-70);
+  font-size: var(--fs-5);
+  font-weight: var(--fw-500);
+  font-family: var(--ff-headline);
   padding: 20px 7px;
   transition: color var(--transition-1);
 }
@@ -490,6 +493,7 @@ main {
   color: var(--light-gray);
   font-size: var(--fs-6);
   font-weight: var(--fw-300);
+  font-family: var(--ff-text);
   line-height: 1.6;
 }
 
@@ -539,7 +543,8 @@ main {
 .service-item-text {
   color: var(--light-gray);
   font-size: var(--fs-6);
-  font-weight: var(--fw-3);
+  font-weight: var(--fw-200);
+  font-family: var(--ff-text);
   line-height: 1.6;
 }
 
@@ -557,7 +562,7 @@ main {
  * education and experience 
  */
 
-.timeline { margin-bottom: 30px; }
+/* .timeline { margin-bottom: 30px; }
 
 .timeline .title-wrapper {
   display: flex;
@@ -638,7 +643,8 @@ main {
   border: 1px solid var(--);
   border-radius: 14px;
   font-size: var(--fs-6);
-  font-weight: var(--fw-300);
+  font-weight: var(--fw-200);
+  font-family: var(--ff-text);
 }
 
 .filter-select.active .select-icon { transform: rotate(0.5turn); }
@@ -668,7 +674,8 @@ main {
   background: var(--bg-2);
   color: var(--light-gray);
   font-size: var(--fs-6);
-  font-weight: var(--fw-300);
+  font-weight: var(--fw-200);
+  font-family: var(--ff-text);
   text-transform: capitalize;
   width: 100%;
   padding: 8px 10px;
@@ -761,16 +768,18 @@ main {
 
 .project-title {
   color: var(--white-2);
-  font-size: var(--fs-5);
-  font-weight: var(--fw-400);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-500);
+  font-family: var(--ff-headline);
   text-transform: capitalize;
   line-height: 1.3;
 }
 
 .project-category {
   color: var(--light-gray-70);
-  font-size: var(--fs-6);
-  font-weight: var(--fw-300);
+  font-size: var(--fs-8);
+  font-weight: var(--fw-500);
+  font-family: var(--ff-text);
 }
 
 
@@ -793,9 +802,6 @@ main {
   .project-img{ height: auto; }
 
 }
-
-
-
 
 
 
@@ -839,7 +845,7 @@ main {
   }
 
   .article-title {
-    font-weight: var(--fw-600);
+    font-weight: var(--fw-700);
     padding-bottom: 15px;
   }
 
@@ -854,7 +860,6 @@ main {
     border-radius: 12px;
     font-size: 18px;
   }
-
 
 
 
@@ -1027,6 +1032,7 @@ main {
   .filter-item button {
     color: var(--light-gray);
     font-size: var(--fs-5);
+    font-family: var(--ff-text);
     transition: var(--transition-1);
   }
 
@@ -1229,7 +1235,8 @@ main {
 
   .contact-info :is(.contact-link, time, address) {
     --fs-7: 14px;
-    font-weight: var(--fw-300);
+    font-weight: var(--fw-200);
+    font-family: var(--ff-text);
   }
 
   .separator:last-of-type {
