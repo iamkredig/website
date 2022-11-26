@@ -374,10 +374,9 @@ main {
 }
 
 .info-content .title {
-  color: var(--white);
   background: var(--violett-accent-gradient);
   font-family: var(--ff-text);
-  font-size: var(--fs-8);
+  font-size: var(--fs-7);
   font-weight: var(--fw-500);
   width: max-content;
   padding: 3px 12px;
@@ -512,7 +511,6 @@ main {
 
 .service-item {
   position: relative;
-  background: var( --border);
   padding: 20px;
   border-radius: 14px;
   z-index: 1;
@@ -1230,7 +1228,6 @@ main {
 
   .separator:last-of-type {
     margin: 15px 0;
-    opacity: 0;
   }
 
   .social-list { justify-content: center; }
