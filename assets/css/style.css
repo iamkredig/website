@@ -250,16 +250,10 @@ main {
   min-width: 259px;
 }
 
-.blob-1 {
-  width: 15px;
-}
-
-
-
 .tk-blob {
- max-width: 150px;
+  width: 150px;
   animation: blob-turn var(--time, 30s) linear infinite;
-  fill: var(--fill, #7600f8);
+  fill: var(--fill, var(--violett-accent));
   position: relative;
   transform-origin: center;
 }
@@ -362,12 +356,9 @@ main {
 
 .sidebar {
   margin-bottom: 15px;
-  max-height: 112px;
   overflow: hidden;
   transition: var(--transition-2);
 }
-
-.sidebar { max-height: 405px; }
 
 .sidebar-info {
   position: relative;
@@ -884,7 +875,7 @@ main {
    */
 
   .sidebar {
-    max-height: 584px;
+
     margin-bottom: 30px;
   }
   
@@ -894,11 +885,7 @@ main {
 
   .sidebar-info { gap: 25px; }
 
-  .avatar-box img { width: 140px; 
-
-    object-fit: cover;
-    border-radius: 50%;
-  }
+  .avatar-box img { width: 140px}
 
   .info-content .name { margin-bottom: 15px; }
 
@@ -1209,7 +1196,6 @@ main {
   .sidebar {
     position: sticky;
     top: 60px;
-    max-height: max-content;
     height: 100%;
     margin-bottom: 0;
     padding-top: 60px;
