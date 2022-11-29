@@ -1,18 +1,13 @@
 'use strict';
 
-
-
-// element toggle function
-const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
-
-
-
 // custom select variables
 const select = document.querySelector("[data-select]");
 const selectItems = document.querySelectorAll("[data-select-item]");
 const selectValue = document.querySelector("[data-selecct-value]");
 const filterBtn = document.querySelectorAll("[data-filter-btn]");
 
+// element toggle function
+const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
 select.addEventListener("click", function () { elementToggleFunc(this); });
 
 // add event in all select items
@@ -65,47 +60,8 @@ for (let i = 0; i < filterBtn.length; i++) {
 
 }
 
+const toggleLink = document.querySelector(".toggle-box");
+const navigation_barLink = document.querySelector(".navigation-bar");
 
-
-// contact form variables
-const form = document.querySelector("[data-form]");
-const formInputs = document.querySelectorAll("[data-form-input]");
-const formBtn = document.querySelector("[data-form-btn]");
-
-// add event to all form input field
-for (let i = 0; i < formInputs.length; i++) {
-  formInputs[i].addEventListener("input", function () {
-
-    // check form validation
-    if (form.checkValidity()) {
-      formBtn.removeAttribute("disabled");
-    } else {
-      formBtn.setAttribute("disabled", "");
-    }
-
-  });
-}
-
-
-
-// page navigation variables
-const navigationLinks = document.querySelectorAll("[data-nav-link]");
-const pages = document.querySelectorAll("[data-page]");
-
-// add event to all nav link
-for (let i = 0; i < navigationLinks.length; i++) {
-  navigationLinks[i].addEventListener("click", function () {
-
-    for (let i = 0; i < pages.length; i++) {
-      if (this.innerHTML.toLowerCase() === pages[i].dataset.page) {
-        pages[i].classList.add("active");
-        navigationLinks[i].classList.add("active");
-        window.scrollTo(0, 0);
-      } else {
-        pages[i].classList.remove("active");
-        navigationLinks[i].classList.remove("active");
-      }
-    }
-
-  });
-}
+toggleLink.addEventListener("click",e => {toggleLink.classList.toggle("active")});
+toggleLink.addEventListener("click",e => {navigation_barLink.classList.toggle("active")});
