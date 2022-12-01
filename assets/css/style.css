@@ -42,14 +42,13 @@
   --ff-headline: 'Alegreya Sans SC', sans-serif;
   --ff-text: 'Hind Madurai', sans-serif;
 
-  --fs-1: 24px;
-  --fs-2: 18px;
-  --fs-3: 17px;
-  --fs-4: 16px;
-  --fs-5: 15px;
-  --fs-6: 14px;
-  --fs-7: 13px;
-  --fs-8: 11px;
+  --fs-1: 32px;
+  --fs-2: 24px;
+  --fs-3: 26px;
+  --fs-4: 18px;
+  --fs-6: 15px;
+  --fs-7: 15px;
+  --fs-8: 12px;
 
   --fw-300: 300;
   --fw-400: 400;
@@ -135,7 +134,7 @@ article {
   position: relative;
   width: 48px;
   height: 48px;
-  border-radius: 8px;
+  border-radius: 12px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -204,24 +203,9 @@ main {
   margin: 15px 12px;
   margin-bottom: 75px;
   min-width: 259px;
-}
-.tk-blob {
-  width: 150px;
-  animation: blob-turn var(--time, 30s) linear infinite;
-  fill: var(--fill, var(--violett-accent));
-  position: relative;
-  transform-origin: center;
+  margin-top: 100px;
 }
 
-.tk-blob svg {
-  animation: blob-skew calc( var(--time, 30s) * 0.5 ) linear 0s infinite;
-  transform-origin: center;
-}
-
-.tk-blob svg path {
-  animation: blob-scale calc( var(--time, 30s) * 0.5 ) ease-in-out 0s infinite;
-  transform-origin: center;
-}
 
 /*-----------------------------------*\
   #SIDEBAR
@@ -282,7 +266,6 @@ main {
   border-radius: 10px;
   background-color: var(--bg-2);
   transition-duration: 0.4s;
-  
 }
 
 .contact-button:hover {
@@ -591,6 +574,7 @@ main {
 }
 
 .project-img {
+  height: auto;
   position: relative;
   width: 100%;
   border-radius: 16px;
@@ -664,55 +648,34 @@ main {
   #RESPONSIVE
 \*-----------------------------------*/
 
-/**
- * responsive larger than 450px screen
- */
-
-@media (min-width: 450px) {
-
-  /**
-   * #PORTFOLIO
-   */
-
-  .project-img{ height: auto; }
-  
-  .main{
-    margin-top: 100px;
-  }
-
-}
-
-
-
-
-
-/**
- * responsive larger than 580px screen
- */
-
-@media (min-width: 580px) {
-
-  /**
-   * CUSTOM PROPERTY
-   */
-
-  :root {
+@media (max-width: 580px) {
 
     /**
-     * typography
-     */
+   * CUSTOM PROPERTY
+   */
+ 
+  :root {
+    --fs-1: 24px;
+    --fs-2: 18px;
+    --fs-3: 17px;
+    --fs-4: 16px;
+    --fs-5: 15px;
+    --fs-6: 14px;
+    --fs-7: 13px;
+    --fs-8: 11px;
+  }
+  
+  /**
+   * #REUSED STYLE
+   */
 
-    --fs-1: 32px;
-    --fs-2: 24px;
-    --fs-3: 26px;
-    --fs-4: 18px;
-    --fs-6: 15px;
-    --fs-7: 15px;
-    --fs-8: 12px;
-
+  .icon-box {
+    border-radius: 8px;
   }
 
 
+ }
+@media (min-width: 580px) {
 
   /**
    * #REUSED STYLE
@@ -733,14 +696,6 @@ main {
     width: 40px;
     height: 5px;
   }
-
-  .icon-box {
-    width: 48px;
-    height: 48px;
-    border-radius: 12px;
-  }
-
-
  
 
   /**
@@ -777,8 +732,6 @@ main {
   .info-content .title { padding: 5px 18px; }
 
   .separator { margin: 32px 0; }
-
-
 
   .contacts-list { gap: 20px; }
   
@@ -843,12 +796,11 @@ main {
 
 
 
-
-/**
- * responsive larger than 768px screen
- */
-
 @media (max-width: 768px){
+
+  main{
+    margin-top: 15px;
+  }
 
   .navbar{
    background: transparent;
@@ -887,6 +839,7 @@ main {
     height:48px;
     border-radius:12px;
   }
+
 
 }
 @media (min-width: 768px) {
@@ -948,10 +901,8 @@ main {
 
 
 
-/**
- * responsive larger than 1024px screen
- */
 
+@media (max-width: 1024px) {}
 @media (min-width: 1024px) {
 
   /**
@@ -1008,10 +959,9 @@ main {
 
 
 
-/**
- * responsive larger than 1250px screen
- */
+@media (max-width: 1250px) {
 
+ }
 @media (min-width: 1250px) {
 
   /**
