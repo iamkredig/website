@@ -42,13 +42,14 @@
   --ff-headline: 'Alegreya Sans SC', sans-serif;
   --ff-text: 'Hind Madurai', sans-serif;
 
-  --fs-1: 32px;
-  --fs-2: 24px;
-  --fs-3: 26px;
-  --fs-4: 18px;
-  --fs-6: 15px;
-  --fs-7: 15px;
-  --fs-8: 12px;
+  --fs-1: 24px;
+  --fs-2: 18px;
+  --fs-3: 17px;
+  --fs-4: 16px;
+  --fs-5: 15px;
+  --fs-6: 14px;
+  --fs-7: 13px;
+  --fs-8: 11px;
 
   --fw-300: 300;
   --fw-400: 400;
@@ -134,7 +135,7 @@ article {
   position: relative;
   width: 48px;
   height: 48px;
-  border-radius: 12px;
+  border-radius: 8px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -201,11 +202,9 @@ h5{font-size: var(--fs-5);}
 
 main {
   margin: 15px 12px;
-  margin-bottom: 60px;
+  margin-bottom: 75px;
   min-width: 259px;
-  margin-top: 100px;
 }
-
 
 /*-----------------------------------*\
   #SIDEBAR
@@ -266,6 +265,7 @@ main {
   border-radius: 10px;
   background-color: var(--bg-2);
   transition-duration: 0.4s;
+  
 }
 
 .contact-button:hover {
@@ -574,7 +574,6 @@ main {
 }
 
 .project-img {
-  height: auto;
   position: relative;
   width: 100%;
   border-radius: 16px;
@@ -648,42 +647,55 @@ main {
   #RESPONSIVE
 \*-----------------------------------*/
 
-@media (max-width: 580px) {
+/**
+ * responsive larger than 450px screen
+ */
 
-    /**
+@media (min-width: 450px) {
+
+  /**
+   * #PORTFOLIO
+   */
+
+  .project-img{ height: auto; }
+  
+  .main{
+    margin-top: 100px;
+  }
+
+}
+
+
+
+
+
+/**
+ * responsive larger than 580px screen
+ */
+
+@media (min-width: 580px) {
+
+  /**
    * CUSTOM PROPERTY
    */
- 
+
   :root {
-    --fs-1: 24px;
-    --fs-2: 18px;
-    --fs-3: 17px;
-    --fs-4: 16px;
-    --fs-5: 15px;
-    --fs-6: 14px;
-    --fs-7: 13px;
-    --fs-8: 11px;
-  }
-  
-  /**
-   * #REUSED STYLE
-   */
 
-  .icon-box {
-    border-radius: 8px;
-  }
+    /**
+     * typography
+     */
 
-   /**
-   * #MAIN
-   */
+    --fs-1: 32px;
+    --fs-2: 24px;
+    --fs-3: 26px;
+    --fs-4: 18px;
+    --fs-6: 15px;
+    --fs-7: 15px;
+    --fs-8: 12px;
 
-  main {
-    margin-bottom: 75px;
   }
 
 
- }
-@media (min-width: 580px) {
 
   /**
    * #REUSED STYLE
@@ -704,7 +716,24 @@ main {
     width: 40px;
     height: 5px;
   }
+
+  .icon-box {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+  }
+
+
  
+
+  /**
+   * #MAIN
+   */
+
+  main {
+    top: 10px;
+    margin-bottom: 100px;
+  }
 
 
 
@@ -731,6 +760,8 @@ main {
   .info-content .title { padding: 5px 18px; }
 
   .separator { margin: 32px 0; }
+
+
 
   .contacts-list { gap: 20px; }
   
@@ -795,11 +826,12 @@ main {
 
 
 
-@media (max-width: 768px){
 
-  main {
-    margin-top: 15px;
-  }
+/**
+ * responsive larger than 768px screen
+ */
+
+@media (max-width: 768px){
 
   .navbar{
    background: transparent;
@@ -838,7 +870,6 @@ main {
     height:48px;
     border-radius:12px;
   }
-
 
 }
 @media (min-width: 768px) {
@@ -900,17 +931,17 @@ main {
 
 
 
+/**
+ * responsive larger than 1024px screen
+ */
 
-@media (max-width: 1024px) {
+@media (min-width: 1024px) {
 
-   /**
-   * MAIN 
+  /**
+   * CUSTOM PROPERTY
    */
 
-   main { margin-bottom: 100px; }
 
-}
-@media (min-width: 1024px) {
 
   /**
    * REUSED STYLE
@@ -919,6 +950,14 @@ main {
   .sidebar, article {
     width: 950px;
   }
+
+  
+
+  /**
+   * MAIN 
+   */
+
+  main { margin-bottom: 60px; }
 
   .main-content {
     position: relative;
@@ -952,9 +991,10 @@ main {
 
 
 
-@media (max-width: 1250px) {
+/**
+ * responsive larger than 1250px screen
+ */
 
- }
 @media (min-width: 1250px) {
 
   /**
