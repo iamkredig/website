@@ -201,7 +201,7 @@ h5{font-size: var(--fs-5);}
 
 main {
   margin: 15px 12px;
-  margin-bottom: 75px;
+  margin-bottom: 60px;
   min-width: 259px;
   margin-top: 100px;
 }
@@ -673,6 +673,14 @@ main {
     border-radius: 8px;
   }
 
+   /**
+   * #MAIN
+   */
+
+  main {
+    margin-bottom: 75px;
+  }
+
 
  }
 @media (min-width: 580px) {
@@ -697,15 +705,6 @@ main {
     height: 5px;
   }
  
-
-  /**
-   * #MAIN
-   */
-
-  main {
-    top: 10px;
-    margin-bottom: 100px;
-  }
 
 
 
@@ -798,7 +797,7 @@ main {
 
 @media (max-width: 768px){
 
-  main{
+  main {
     margin-top: 15px;
   }
 
@@ -902,14 +901,16 @@ main {
 
 
 
-@media (max-width: 1024px) {}
-@media (min-width: 1024px) {
+@media (max-width: 1024px) {
 
-  /**
-   * CUSTOM PROPERTY
+   /**
+   * MAIN 
    */
 
+   main { margin-bottom: 100px; }
 
+}
+@media (min-width: 1024px) {
 
   /**
    * REUSED STYLE
@@ -918,14 +919,6 @@ main {
   .sidebar, article {
     width: 950px;
   }
-
-  
-
-  /**
-   * MAIN 
-   */
-
-  main { margin-bottom: 60px; }
 
   .main-content {
     position: relative;
