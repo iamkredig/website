@@ -6,9 +6,14 @@ const selectItems = document.querySelectorAll("[data-select-item]");
 const selectValue = document.querySelector("[data-selecct-value]");
 const filterBtn = document.querySelectorAll("[data-filter-btn]");
 
-// element toggle function
-const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
 select.addEventListener("click", function () { elementToggleFunc(this); });
+
+// element toggle function
+const elementToggleFunc = function (elem) { elem.classList.toggle("active");}
+
+// element disable function
+const elementDisableFunc = function (elem) { elem.classList.remove("active");}
+
 
 // add event in all select items
 for (let i = 0; i < selectItems.length; i++) {
@@ -18,7 +23,6 @@ for (let i = 0; i < selectItems.length; i++) {
     selectValue.innerText = this.innerText;
     elementToggleFunc(select);
     filterFunc(selectedValue);
-
   });
 }
 
@@ -36,9 +40,7 @@ const filterFunc = function (selectedValue) {
     } else {
       filterItems[i].classList.remove("active");
     }
-
   }
-
 }
 
 // add event in all filter button items for large screen
@@ -55,15 +57,36 @@ for (let i = 0; i < filterBtn.length; i++) {
     lastClickedBtn.classList.remove("active");
     this.classList.add("active");
     lastClickedBtn = this;
-
   });
-
 }
 
+//toggle is clickable
 const toggleLink = document.querySelector(".toggle-box");
 const navbar = document.querySelector(".navbar");
 const navbar_list = document.querySelector(".navbar-list");
+const navbar_link = document.querySelectorAll(".navbar-link");
 
-toggleLink.addEventListener("click",e => {toggleLink.classList.toggle("active")});
-toggleLink.addEventListener("click",e => {navbar_list.classList.toggle("active")});
-toggleLink.addEventListener("click",e => {navbar.classList.toggle("active")});
+toggleLink.addEventListener("click",e =>{
+  elementToggleFunc(navbar_list);
+  elementToggleFunc(navbar);
+});
+
+//hide navbar on click in phone-mode
+for (const navbar_link0 of navbar_link){
+  navbar_link0.addEventListener("click",e =>{
+    elementDisableFunc(navbar_list);
+    elementDisableFunc(navbar);
+  });
+}
+
+// hide navbar on scroll
+let lastScrollY = window.scrollY;
+window.addEventListener("scroll", () =>{
+  if (lastScrollY < window.scrollY){
+    navbar.classList.add("hidden")
+  }
+  else{
+    navbar.classList.remove("hidden")
+  }
+  lastScrollY = window.scrollY
+})

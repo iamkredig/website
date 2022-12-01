@@ -7,6 +7,12 @@
  * w: http://animista.net, t: @cssanimista
  * ---------------------------------------------- */
 
+/*smooth scrolling*/
+
+html{
+  scroll-behavior: smooth;
+}
+
 /*#CUSTOM PROPERTY*/
 
 :root {
@@ -54,6 +60,9 @@
   --transition-1-5: 0.35s ease-in-out;
   --transition-2: 0.5s ease-in-out;
 
+  /*navbar*/
+
+  --navbar-height:60px;
 }
 
 /*#RESET*/
@@ -265,8 +274,8 @@ main {
   align-items:center ;
   justify-content: right;
   top: 0;
-  background-color: var(--bg-3);
-  height: 60px;
+  background-color: var(--bg-1);
+  height: var(--navbar-height);
   width: 100%;
   z-index: 100;
 }
@@ -290,7 +299,7 @@ main {
   display: inline-block;
   justify-content: center;
   margin: 0 15px;
-  height: 60px;
+  height: var(--navbar-height);
 }
 
 .navbar-link{
@@ -302,12 +311,17 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 60px;
+  height: var(--navbar-height);
 }
 
 .navbar-link.active,.navbar-link:hover{
-  color: var(--bg-3);
+  color: var(--bg-1);
   background-color: var(--violett-accent);
+  transition: var(--transition-1);
+}
+
+.navbar.hidden{
+  transform: translateY(-100%);
   transition: var(--transition-1);
 }
 
@@ -614,8 +628,8 @@ main {
     /*typography*/
 
     --fs-1: 32px;
-    --fs-2: 24px;
-    --fs-3: 26px;
+    --fs-2: 26px;
+    --fs-3: 24px;
     --fs-4: 18px;
     --fs-6: 15px;
     --fs-7: 15px;
@@ -649,7 +663,6 @@ main {
   /*#MAIN*/
 
   main {
-    top: 10px;
     margin-bottom: 100px;
   }
 
@@ -732,13 +745,14 @@ main {
   }
 
   .navbar.active{
-    background: var(--bg-3);
+    background: var(--bg-1);
+    transition: var(--transition-1);
   }
   
   .navbar-list{
     position: fixed;
     width: 100%;
-    background-color: var(--bg-2);
+    background-color: var(--bg-1);
     top: 100px;
     left: 0;
     right: 0;
@@ -762,6 +776,7 @@ main {
     width: 48px;
     height:48px;
     border-radius:12px;
+    transition: var(--transition-1);
   }
 }
 
@@ -772,6 +787,10 @@ main {
   .sidebar, article { width: 700px; }
 
   .has-scrollbar::-webkit-scrollbar-button { width: 100px; }
+
+  main {
+    margin-top: 100px;
+  }
 
   /*SIDEBAR*/
 
@@ -873,7 +892,6 @@ main {
   main {
     max-width: 1200px;
     margin-inline: auto;
-    margin-top: 100px;
     display: flex;
     justify-content: center;
     align-items: stretch;
