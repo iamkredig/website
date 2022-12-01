@@ -61,7 +61,9 @@ for (let i = 0; i < filterBtn.length; i++) {
 }
 
 const toggleLink = document.querySelector(".toggle-box");
-const navigation_barLink = document.querySelector(".navigation-bar");
+const navbar = document.querySelector(".navbar");
+const navbar_list = document.querySelector(".navbar-list");
 
 toggleLink.addEventListener("click",e => {toggleLink.classList.toggle("active")});
-toggleLink.addEventListener("click",e => {navigation_barLink.classList.toggle("active")});
+toggleLink.addEventListener("click",e => {navbar_list.classList.toggle("active")});
+toggleLink.addEventListener("click",e => {navbar.classList.toggle("active")});
