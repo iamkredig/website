@@ -13,7 +13,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@400;500;700&family=Hind+Madurai:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@400;500;700&family=Hind+Madurai:wght@300;500&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -22,31 +22,23 @@
  
   <nav class="navbar">
     <button class="toggle-box"></button>
-      <ul class="navbar-list">
+    <ul class="navbar-list">
 
-          <li class="navbar-item">
-            <a href="#about" class="navbar-link">About</a>
-          </li>
+      <li class="navbar-item"><a href="#contact" class="navbar-link">Contact</a></li>
+      <li class="navbar-item"><a href="#about" class="navbar-link">About</a></li>
+      <!--
+      <li class="navbar-item"><a href="#" class="navbar-link">Resume</a></li>
+      -->
+      <li class="navbar-item"><a href="#portfolio" class="navbar-link">Portfolio</a></li>
 
-          <!--
-          <li class="navbar-item">
-            <a href="#" class="navbar-link">Resume</a>
-          </li>
-          -->
-
-        <li class="navbar-item">
-          <a href="#portfolio" class="navbar-link">Portfolio</a>
-        </li>
-
-
-      </ul>
+    </ul>
   </nav>
   
   <main>
 
     <!-- #SIDEBAR -->
 
-    <aside class="sidebar" data-sidebar>
+    <aside class="sidebar" data-sidebar id="contact">
 
       <div class="sidebar-info">
 
@@ -89,7 +81,7 @@
 
               <a href="https://t.me/iamkredig">
                 <div class="icon-box">
-                  <img class="icon" src="./assets/icons/icon-telegram.svg" alt="world icon" width="30">
+                  <img class="icon" src="./assets/icons/icon-telegram.svg" alt="telegram icon" width="30">
                 </div>
 
                 <div class="contact-info">
@@ -106,7 +98,7 @@
 
               <a href="https://twitter.com/iamkredig">
                 <div class="icon-box">
-                  <img class="icon" src="./assets/icons/icon-twitter.svg" alt="world icon" width="30">
+                  <img class="icon" src="./assets/icons/icon-twitter.svg" alt="twitter icon" width="30">
                 </div>
 
                 <div class="contact-info">
@@ -124,7 +116,7 @@
 
             <a href="mailto:iamkredig@yandex.ru">
               <div class="icon-box">
-                <img class="icon" src="./assets/icons/icon-mail.svg" alt="world icon" width="30">
+                <img class="icon" src="./assets/icons/icon-mail.svg" alt="mail icon" width="30">
               </div>
 
               <div class="contact-info">
@@ -181,7 +173,7 @@
             <li class="service-item">
 
               <div class="service-icon-box">
-                <img class="icon" src="./assets/icons/icon-brush.svg" alt="design icon" width="40">
+                <img class="icon" src="./assets/icons/icon-brush.svg" alt="drawing icon" width="40">
               </div>
 
               <div class="service-content-box">
@@ -197,7 +189,7 @@
             <li class="service-item">
 
               <div class="service-icon-box">
-                <img class="icon" src="./assets/icons/icon-gamepad.svg" alt="gamepad icon" width="40">
+                <img class="icon" src="./assets/icons/icon-gamepad.svg" alt="gaming icon" width="40">
               </div>
 
               <div class="service-content-box">
@@ -213,7 +205,7 @@
             <li class="service-item">
 
               <div class="service-icon-box">
-                <img class="icon" src="./assets/icons/icon-music_note.svg" alt="music note icon" width="40">
+                <img class="icon" src="./assets/icons/icon-music_note.svg" alt="music icon" width="40">
               </div>
 
               <div class="service-content-box">
@@ -229,7 +221,7 @@
             <li class="service-item">
 
               <div class="service-icon-box">
-                <img class="icon" src="./assets/icons/icon-world.svg" alt="world icon" width="35">
+                <img class="icon" src="./assets/icons/icon-world.svg" alt="internet icon" width="35">
               </div>
 
               <div class="service-content-box">
@@ -383,7 +375,7 @@
       <article class="portfolio" data-page="portfolio" id="portfolio">
 
         <header>
-          <h2 class="article-title">Potfolio</h2>
+          <h2 class="article-title">Portfolio</h2>
         </header>
 
         <section class="projects">
@@ -411,11 +403,11 @@
             <ul class="select-list">
 
               <li class="select-item">
-                <button data-select-item>All</button>
+                <button data-select-item><a>All</a></button>
               </li>
 
               <li class="select-item">
-                <button data-select-item>Drawing</button>
+                <button data-select-item><a>Drawing</a></button>
               </li>
 
             </ul>
@@ -429,10 +421,10 @@
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
-                    <img class="icon" src="./assets/icons/icon-visibility.svg" width="25px">
+                    <img class="icon" src="./assets/icons/icon-visibility.svg" alt="eye icon" width="25px">
                   </div>
 
-                  <img src="./assets/images/4.jpg" alt="aa" loading="lazy">
+                  <img src="./assets/images/4.jpg" alt="drawing" loading="lazy">
                 </figure>
               </a>
                 <h4 class="project-title">25.11.2022</h4>
@@ -446,10 +438,10 @@
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
-                    <img class="icon" src="./assets/icons/icon-visibility.svg" width="25px">
+                    <img class="icon" src="./assets/icons/icon-visibility.svg" lt="eye icon" width="25px">
                   </div>
 
-                  <img src="./assets/images/3.jpg" alt="brawlhalla" loading="lazy">
+                  <img src="./assets/images/3.jpg" alt="drawing" loading="lazy">
                 </figure>
               </a>
 
@@ -464,10 +456,10 @@
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
-                    <img class="icon" src="./assets/icons/icon-visibility.svg" width="25px">
+                    <img class="icon" src="./assets/icons/icon-visibility.svg" lt="eye icon" width="25px">
                   </div>
 
-                  <img src="./assets/images/2.jpg" alt="dsm." loading="lazy">
+                  <img src="./assets/images/2.jpg" alt="drawing" loading="lazy">
                 </figure>
               </a>
                 <h4 class="project-title">29.10.2022</h4>
@@ -481,10 +473,10 @@
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
-                    <img class="icon"src="./assets/icons/icon-visibility.svg" width="25px">
+                    <img class="icon"src="./assets/icons/icon-visibility.svg" lt="eye icon" width="25px">
                   </div>
 
-                  <img src="./assets/images/1.jpg" alt="1jpg" loading="lazy">
+                  <img src="./assets/images/1.jpg" alt="drawing" loading="lazy">
                 </figure>
               </a>
                 <h4 class="project-title">08.03.2022</h4>
@@ -504,7 +496,7 @@
   </main>
 
 
-  <!-- custom js link -->
+  <!-- js link -->
   <script src="./assets/js/script.js"></script>
 
 </body>

@@ -69,6 +69,7 @@ const navbar_link = document.querySelectorAll(".navbar-link");
 toggleLink.addEventListener("click",e =>{
   elementToggleFunc(navbar_list);
   elementToggleFunc(navbar);
+  elementToggleFunc(toggleLink)
 });
 
 //hide navbar on click in phone-mode
@@ -76,6 +77,7 @@ for (const navbar_link0 of navbar_link){
   navbar_link0.addEventListener("click",e =>{
     elementDisableFunc(navbar_list);
     elementDisableFunc(navbar);
+    elementDisableFunc(toggleLink)
   });
 }
 
