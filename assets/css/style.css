@@ -101,7 +101,7 @@ body { background: var( --bg-1); }
 .sidebar {
   background: var(--bg-2);
   border-radius: 20px;
-  padding: 15px;
+  padding-bottom: 15px;
   z-index: 1;
 }
 
@@ -124,7 +124,7 @@ article {
   position: relative;
   width: 48px;
   height: 48px;
-  border-radius: 8px;
+  margin-left:15px ;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -135,7 +135,6 @@ article {
   content: "";
   position: absolute;
   inset: 1px;
-  background: var(--bg-3);
   border-radius: inherit;
   z-index: -1;
 }
@@ -164,7 +163,7 @@ h5{
 
 a,p{
   font-family: var(--ff-text);
-  font-size: var(--fs-6);
+  font-size: var(--fs-4);
   font-weight: var(--fw-300);
   color: var(--light-gray);
 }
@@ -213,13 +212,13 @@ main {
 /*#SIDEBAR*/
 
 .sidebar {
-  margin-top:0;
   margin-bottom: 15px;
   overflow: hidden;
   transition: var(--transition-1-5);
 }
 
 .sidebar-info {
+  margin: 30px;
   position: relative;
   display: flex;
   justify-content: flex-start;
@@ -252,14 +251,12 @@ main {
 }
 
 .contact-item {
-  min-width: 100%;
   display: flex;
   align-items: center;
   gap: 16px;
 }
 
 .contact-button {
-  border-radius: 10px;
   background-color: var(--bg-2);
   transition-duration: 0.4s;
 }
@@ -621,10 +618,17 @@ main {
 
   /*#REUSED STYLE*/
 
-  .sidebar, article {
+  .sidebar{
     width: 520px;
     margin-inline: auto;
-    padding: 30px;
+    padding: 0;
+    padding-bottom: 30px;
+  }
+
+ article {
+    width: 520px;
+    margin-inline: auto;
+    padding: 25px;
   }
 
   .article-title {
@@ -654,11 +658,6 @@ main {
     margin-bottom: 15px;
   }
   
-  .contact-button {
-    max-width: calc(100% - 10px);
-    border-radius: 14px;
-  }
-
   .sidebar-info { gap: 25px; }
 
   .avatar-box img { width: 140px}
@@ -727,7 +726,6 @@ main {
 
   .navbar.active{
     background: var(--bg-1);
-    transition: var(--transition-1);
   }
   
   .navbar-list{
@@ -739,10 +737,12 @@ main {
     right: 0;
     text-align: center;
     display: none;
+    transform: translateX(-100%);
   }
 
   .navbar-list.active{
     display: block;
+    transform: translateX(0);
   }
 
   .navbar-item{
@@ -892,7 +892,7 @@ main {
     top: 100px;
     height: 100%;
     margin-bottom: 0;
-    padding-top: 100px;
+    padding-top: 30px;
     z-index: 1;
   }
 
@@ -917,6 +917,13 @@ main {
   .contact-info :is(.contact-link) {
     white-space: nowrap;
     overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .contact-link{
+    max-width: calc(100% - 10px);
+    overflow: hidden;
+    white-space: nowrap; /* Don't forget this one */
     text-overflow: ellipsis;
   }
 
