@@ -29,8 +29,8 @@ html{
   );
 
   --bg-1:hsl(0, 0%, 7%);
-  --bg-2:hsl(240, 2%, 12%);
-  --bg-3:#282829;
+  --bg-2:hsl(0, 0%, 10%);
+  --bg-3:hsl(0, 0%, 14%);;
 
   --border:hsl(0, 0%, 22%);
 
@@ -688,7 +688,6 @@ main {
     justify-content: flex-start;
     align-items: flex-start;
     gap: 18px;
-    padding: 30px;
   }
 
   .service-icon-box {
