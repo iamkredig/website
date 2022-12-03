@@ -19,8 +19,9 @@ html{
 
   /*colors*/
 
-  --white: hsl(0, 0%, 90%);
-  --light-gray: hsl(0, 0%, 80%);
+  --headline-color: hsl(0, 0%, 15%);
+  --text-color: hsl(0, 0%, 17%);
+  --text-color-highlight:hsl(0, 0%, 90%);
 
   --violett-accent: hsl(265, 100%, 72%);
   --violett-accent-gradient: linear-gradient( to right, 
@@ -28,11 +29,9 @@ html{
     hsl(265, 100%, 65%)
   );
 
-  --bg-1:hsl(0, 0%, 7%);
-  --bg-2:hsl(0, 0%, 12%);
-  --bg-3:hsl(0, 0%, 15%);;
-
-  --border:hsl(0, 0%, 22%);
+  --bg-1:hsl(0, 0%,7%);
+  --bg-2:hsl(0, 0%, 90%);
+  --bg-3:hsl(0, 0%, 95%);
 
   /*typography*/
 
@@ -63,6 +62,10 @@ html{
   /*navbar*/
 
   --navbar-height:60px;
+
+  /*box shadow*/
+  --box-shadow-1:0 5px 10px 0 rgba(0, 0, 0, 0.2);
+  --box-shadow-2:0 12px 20px 0 rgba(0, 0, 0, 0.2);
 }
 
 /*#RESET*/
@@ -78,6 +81,22 @@ a { text-decoration: none; }
 li { list-style: none; }
 
 /*#REUSED STYLE*/
+
+body.dark-mode{
+  --headline-color: hsl(0, 0%, 90%);
+  --text-color: hsl(0, 0%, 80%);
+  --text-color-highlight:hsl(0, 0%,7%);
+
+  --violett-accent: hsl(265, 100%, 72%);
+  --violett-accent-gradient: linear-gradient( to right, 
+    hsl(265, 100%, 72%), 
+    hsl(265, 100%, 65%)
+  );
+
+  --bg-1:hsl(0, 0%,7%);
+  --bg-2:hsl(0, 0%, 15%);
+  --bg-3:hsl(0, 0%, 17%);
+}
 
 img, a, button, time, span { display: block; }
 
@@ -138,13 +157,14 @@ article {
 }
 
 h2,h3,h4,h5 {
-  color: var(--white);
+  color: var(--headline-color);
   font-family: var(--ff-headline);
 }
 
 h2{
   font-size: var(--fs-2);
   font-weight: var(--fw-700);
+  letter-spacing: 0.5rem;
 }
 h3{
   font-size: var(--fs-3);
@@ -163,7 +183,7 @@ a,p{
   font-family: var(--ff-text);
   font-size: var(--fs-4);
   font-weight: var(--fw-300);
-  color: var(--light-gray);
+  color: var(--text-color);
 }
 
 .article-title {
@@ -244,13 +264,18 @@ main {
 .avatar-box img { width: 90px; 
   object-fit: cover;
   border-radius: 50%;
+  box-shadow: var(--box-shadow-1);
 }
 
+.name{
+  letter-spacing: normal;
+}
 .info-content .name {
   margin-bottom: 10px;
 }
 
 .info-content .title {
+  box-shadow: var(--box-shadow-1);
   background: var(--violett-accent-gradient);
   color: var(--bg-2);
   font-weight: var(--fw-500);
@@ -266,6 +291,7 @@ main {
 }
 
 .contact-item {
+  box-shadow: var(--box-shadow-2);
   display: flex;
   align-items: center;
   gap: 16px;
@@ -288,10 +314,11 @@ main {
 /*#NAVBAR*/
 
 .navbar{
+  box-shadow: var(--box-shadow-1);
   position: fixed;
   display: flex;
-  align-items:center ;
-  justify-content: right;
+  align-items:center;
+  justify-content: space-between;
   top: 0;
   margin-left: 20px;
   border-radius: 0 0 12px 12px;
@@ -301,22 +328,34 @@ main {
   z-index: 100;
 }
 
-.toggle-box{
+.toggle-dark-button{
+  margin-left: 8px;
+  display: block;
+  width: 48px;
+  height: 48px;
+  background: var(--text-color-highlight);
+  cursor:pointer;
+  border-radius: 48px;
+}
+
+.toggle-nav-button{
   display: none;
   width: 48px;
   height: 48px;
   background: var(--violett-accent);
   cursor:pointer;
-  border-radius: 8px;
+  border-radius: 48px;
 }
 
 .navbar-list{
-  margin-right: 20px;
+  margin-right: 20px; 
+  justify-content: flex-end;
 }
 
 .navbar-item{
-  display: inline-block;
-  justify-content: center;
+  flex-direction: row;
+  float: left;
+  position: relative;
   margin: 0 15px;
   height: var(--navbar-height);
 }
@@ -325,7 +364,7 @@ main {
   font-family:var(--ff-headline);
   font-size: var(--fs-4);
   font-weight: var(--fw-400);
-  color: var(--white);
+  color: var(--headline-color);
   text-transform: capitalize;
   display: flex;
   align-items: center;
@@ -334,9 +373,9 @@ main {
 }
 
 .navbar-link.active,.navbar-link:hover{
-  color: var(--bg-1);
-  background-color: var(--violett-accent);
+  color: var(--text-color-highlight);
   transition: var(--transition-1);
+  box-shadow: var(--box-shadow-1);
 }
 
 .navbar.hidden{
@@ -368,9 +407,10 @@ main {
 }
 
 .service-item {
+  box-shadow: var(--box-shadow-1); 
   position: relative;
   padding: 20px;
-  border-radius: 14px;
+  border-radius: 12px;
   z-index: 1;
 }
 
@@ -452,7 +492,7 @@ main {
 }
 
 .timeline-text {
-  color: var(--light-gray);
+  color: var(--text-color);
   font-weight: var(--fw-300);
   line-height: 1.6;
 }
@@ -462,7 +502,7 @@ main {
 .portfolio{
   margin-top: 15px;
 }
-.filter-list { display: none; }
+/*.filter-list { display: none; }
 
 .filter-select-box {
   position: relative;
@@ -471,7 +511,7 @@ main {
 
 .filter-select {
   background: var(--bg-3);
-  color: var(--white);
+  color: var(--headline-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -514,7 +554,7 @@ main {
 }
 
 .select-item button:hover { --bg-1: hsl(240, 2%, 20%); }
-
+*/
 .project-list {
   display: grid;
   grid-template-columns: 1fr;
@@ -526,6 +566,8 @@ main {
 
 .project-item.active {
   display:block;
+  border-radius: 8px;
+  box-shadow: var(--box-shadow-1);
   animation: scaleUp 0.25s ease forwards;
 }
 
@@ -541,7 +583,7 @@ main {
 .project-img {
   position: relative;
   width: 100%;
-  border-radius: 16px;
+  border-radius: 8px 8px 0 0;
   overflow: hidden;
   margin-bottom: 15px;
 }
@@ -714,15 +756,12 @@ main {
   }
 
   .skills-item:not(:last-child) { margin-bottom: 25px; }
-
-  /*#PORTFOLIO*/
-
-  .project-img, .blog-banner-box { border-radius: 16px; }
 }
 
 @media (max-width: 768px){
 
   .navbar{
+    box-shadow: none;
     margin: 0;
     width: 100%;
     background: transparent;
@@ -753,6 +792,7 @@ main {
   .navbar-list.active{
     display: block;
     animation: flyin 0.5s ease-in-out;
+    box-shadow: var(--box-shadow-1);
     transition: var(--transition-2);
   }
 
@@ -762,19 +802,16 @@ main {
     margin: 0;
   }
 
-  .toggle-box{
+  .toggle-nav-button{
     position:fixed ;
     top:30px;
     right:20px;
     display: block;
-    width: 48px;
-    height:48px;
-    border-radius:12px;
     z-index: 101;
     transition: var(--transition-1);
   }
 
-  .toggle-box.active{
+  .toggle-nav-button.active{
     width: calc(100% - 40px);
     margin-left: 20px;
   }
@@ -815,14 +852,14 @@ main {
   }
 
   .filter-item button {
-    color: var(--white);
+    color: var(--headline-color);
     font-size: var(--fs-4);
     font-family: var(--ff-headline);
     font-weight: var(--fw-300);
     transition: var(--transition-1);
   }
 
-  .filter-item button:hover { color: var(--light-gray); }
+  .filter-item button:hover { color: var(--text-color); }
 
   .filter-item button.active { color: var(--violett-accent); }
 
@@ -950,8 +987,6 @@ main {
   .separator:last-of-type {
     margin: 15px 0;
   }
-
-  .social-list { justify-content: center; }
 
   /*RESUME*/
 

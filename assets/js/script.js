@@ -1,6 +1,5 @@
 'use strict';
 
-// custom select variables
 const select = document.querySelector("[data-select]");
 const selectItems = document.querySelectorAll("[data-select-item]");
 const selectValue = document.querySelector("[data-selecct-value]");
@@ -59,15 +58,15 @@ for (let i = 0; i < filterBtn.length; i++) {
 }
 
 //toggle is clickable
-const toggleLink = document.querySelector(".toggle-box");
+const toggleNavButton = document.querySelector(".toggle-nav-button");
 const navbar = document.querySelector(".navbar");
 const navbar_list = document.querySelector(".navbar-list");
 const navbar_link = document.querySelectorAll(".navbar-link");
 
-toggleLink.addEventListener("click",e =>{
+toggleNavButton.addEventListener("click",e =>{
   elementToggleFunc(navbar_list);
   elementToggleFunc(navbar);
-  elementToggleFunc(toggleLink)
+  elementToggleFunc(toggleNavButton)
 });
 
 //hide navbar on click in phone-mode
@@ -75,7 +74,7 @@ for (const navbar_link0 of navbar_link){
   navbar_link0.addEventListener("click",e =>{
     elementDisableFunc(navbar_list);
     elementDisableFunc(navbar);
-    elementDisableFunc(toggleLink)
+    elementDisableFunc(toggleNavButton)
   });
 }
 
@@ -90,3 +89,19 @@ window.addEventListener("scroll", () =>{
   }
   lastScrollY = window.scrollY
 })
+
+//dark and lightmode
+const toggleDarkButton = document.querySelector(".toggle-dark-button");
+const currentTheme = localStorage.getItem("theme");
+const body = document.querySelector("body");
+
+if (currentTheme == "dark") { document.body.classList.add("dark-mode")} 
+else {document.body.classList.remove("dark-mode")}
+
+toggleDarkButton.addEventListener("click", function() {
+  body.classList.toggle("dark-mode");
+  if (document.body.classList.contains("dark-mode")){var theme = "dark";}
+  else{var theme = ""}
+  // save theme to localStorage
+  localStorage.setItem("theme", theme);
+});
