@@ -205,7 +205,6 @@ a,p{
 
 main {
   margin: 15px 12px;
-  margin-bottom: 75px;
   min-width: 259px;
 }
 
@@ -646,12 +645,6 @@ main {
     border-radius: 12px;
   }
 
-  /*#MAIN*/
-
-  main {
-    margin-bottom: 100px;
-  }
-
   /*#SIDEBAR*/
 
   .sidebar {
@@ -769,7 +762,7 @@ main {
   .has-scrollbar::-webkit-scrollbar-button { width: 100px; }
 
   main {
-    margin-top: 100px;
+    margin-top: 80px;
   }
 
   /*SIDEBAR*/
@@ -823,7 +816,7 @@ main {
 
   /*MAIN*/
 
-  main { margin-bottom: 60px; }
+  main { margin-bottom: 80px; }
 
   .main-content {
     position: relative;
@@ -888,7 +881,7 @@ main {
 
   .sidebar {
     position: sticky;
-    top: 100px;
+    top: 80px;
     height: 100%;
     margin-bottom: 0;
     padding-top: 30px;
