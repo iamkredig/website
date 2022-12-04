@@ -61,22 +61,28 @@ for (let i = 0; i < filterBtn.length; i++) {
 const toggleNavButton = document.querySelector(".toggle-nav-button");
 const navbar = document.querySelector(".navbar");
 const navbar_list = document.querySelector(".navbar-list");
-const navbar_link = document.querySelectorAll(".navbar-link");
 
 toggleNavButton.addEventListener("click",e =>{
   elementToggleFunc(navbar_list);
   elementToggleFunc(navbar);
   elementToggleFunc(toggleNavButton)
+  elementToggleFunc(toggleDarkButtonInMenu)
 });
 
 //hide navbar on click in phone-mode
+const navbar_link = document.querySelectorAll(".navbar-link");
+
 for (const navbar_link0 of navbar_link){
   navbar_link0.addEventListener("click",e =>{
     elementDisableFunc(navbar_list);
     elementDisableFunc(navbar);
     elementDisableFunc(toggleNavButton)
+    elementDisableFunc(toggleDarkButtonInMenu)
   });
 }
+//buttons in menu 
+const toggleDarkButtonInMenu = document.querySelector(".toggle-dark-button-in-menu");
+
 
 // hide navbar on scroll
 let lastScrollY = window.scrollY;
@@ -99,6 +105,14 @@ if (currentTheme == "dark") { document.body.classList.add("dark-mode")}
 else {document.body.classList.remove("dark-mode")}
 
 toggleDarkButton.addEventListener("click", function() {
+  body.classList.toggle("dark-mode");
+  if (document.body.classList.contains("dark-mode")){var theme = "dark";}
+  else{var theme = ""}
+  // save theme to localStorage
+  localStorage.setItem("theme", theme);
+});
+
+toggleDarkButtonInMenu.addEventListener("click", function() {
   body.classList.toggle("dark-mode");
   if (document.body.classList.contains("dark-mode")){var theme = "dark";}
   else{var theme = ""}
