@@ -2,5 +2,10 @@ base from <a href="https://github.com/codewithsadee/vcard-personal-portfolio" ta
 <br/>
 
 <p align="center">
-![GitHub repo size](https://img.shields.io/github/repo-size/iamkredig/website) ![Github last commit](https://img.shields.io/github/last-commit/iamkredig/website)
-/>
+<a href="https://img.shields.io/github/repo-size/iamkredig/website" traget="_blank">
+<a href="https://img.shields.io/github/last-commit/iamkredig/website" trarget="_blank">
+  
+<a href="https://github.com/builtbybel/bloatbox/releases/latest" target="_blank">
+<img alt="Latest GitHub release" src="https://img.shields.io/github/release/builtbybel/bloatbox.svg?style=flat-square" />
+</a>
+
