@@ -467,11 +467,15 @@ main {
   z-index: 1;
 }
 
+.service-item:hover {
+  background-color: var(--bg-3);
+  transition: var(--transition-1-5);
+}
+
 .service-item::before {
   content: "";
   position: absolute;
   inset: 1px;
-  background: var(--bg-3);
   border-radius: 8px;
   z-index: -1;
 }
@@ -625,6 +629,11 @@ main {
   display: none;
 }
 
+.project-item:hover{
+  background-color: var(--bg-3);
+  transition: var(--transition-1-5);
+}
+
 .project-item.active {
   display: block;
   border-radius: 8px;
@@ -671,7 +680,6 @@ main {
 
 .project-item-icon-box {
   --scale: 0.8;
-  background-color: var(--bg-3);
   color: var(--violett-accent);
   position: absolute;
   top: 50%;
