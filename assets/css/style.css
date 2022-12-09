@@ -361,10 +361,18 @@ main {
   background: var(--text-color-highlight);
   cursor: pointer;
   border-radius: 48px;
+  box-shadow: var(--box-shadow-1);
 }
 
 .toggle-dark-button {
   display: block;
+}
+
+.setting-icon {
+  display: block;
+  width: 48px;
+  height: 48px;
+  padding: 6px;
 }
 
 .toggle-nav-button {
@@ -374,6 +382,17 @@ main {
   background: var(--violett-accent);
   cursor: pointer;
   border-radius: 48px;
+  box-shadow: var(--box-shadow-1);
+  align-items: center;
+}
+
+.menu-icon {
+  display: block;
+  width: 48px;
+  height: 48px;
+  padding: 6px;
+  cursor: pointer;
+  right: 0;
 }
 
 .navbar-list {
@@ -850,12 +869,19 @@ main {
   .toggle-dark-button-in-menu {
     display: none;
   }
-  .toggle-dark-button-in-menu.active {
+  .toggle-nav-button.active .toggle-dark-button-in-menu {
     display: block;
     z-index: 103;
     margin-left: 4px;
     height: 40px;
     width: 40px;
+  }
+
+  .setting-icon {
+    display: block;
+    width: 40px;
+    height: 40px;
+    padding: 6px;
   }
 
   .navbar.active {
@@ -883,7 +909,7 @@ main {
     }
   }
 
-  .navbar-list.active {
+  .navbar.active .navbar-list {
     display: block;
     animation: flyin 0.5s ease-in-out;
 
@@ -913,6 +939,9 @@ main {
   .toggle-nav-button.active {
     width: calc(100% - 40px);
     margin-left: 20px;
+  }
+  .toggle-nav-button.active .menu-icon {
+    display: none;
   }
 
   .navbar-link {

@@ -61,10 +61,8 @@ const navbar = document.querySelector(".navbar");
 const navbar_list = document.querySelector(".navbar-list");
 
 toggleNavButton.addEventListener("click", (e) => {
-  elementToggleFunc(navbar_list);
   elementToggleFunc(navbar);
   elementToggleFunc(toggleNavButton);
-  elementToggleFunc(toggleDarkButtonInMenu);
 });
 
 //hide navbar on click in phone-mode
@@ -72,10 +70,8 @@ const navbar_link = document.querySelectorAll(".navbar-link");
 
 for (const navbar_link0 of navbar_link) {
   navbar_link0.addEventListener("click", (e) => {
-    elementDisableFunc(navbar_list);
     elementDisableFunc(navbar);
     elementDisableFunc(toggleNavButton);
-    elementDisableFunc(toggleDarkButtonInMenu);
   });
 }
 //buttons in menu
