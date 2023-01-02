@@ -680,7 +680,7 @@ main {
 
 .project-item-icon-box {
   --scale: 0.8;
-  color: var(--violett-accent);
+  background-color: var(--bg-2);
   position: absolute;
   top: 50%;
   left: 50%;
@@ -690,6 +690,7 @@ main {
   opacity: 0;
   z-index: 1;
   transition: var(--transition-1);
+  box-shadow: var(--box-shadow-1);
 }
 
 .project-item > a:hover .project-item-icon-box {
