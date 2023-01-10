@@ -79,42 +79,18 @@ const toggleDarkButtonInMenu = document.querySelector(
   ".toggle-dark-button-in-menu"
 );
 
-// hide navbar on scroll
-let lastScrollY = window.scrollY;
-window.addEventListener("scroll", () => {
-  if (lastScrollY < window.scrollY) {
-    navbar.classList.add("hidden");
-  } else {
-    navbar.classList.remove("hidden");
-  }
-  lastScrollY = window.scrollY;
-});
-
 //dark and lightmode
 const toggleDarkButton = document.querySelector(".toggle-dark-button");
 const currentTheme = localStorage.getItem("theme");
 const body = document.querySelector("body");
 
 if (currentTheme == "dark") {
-  document.body.classList.add("dark-mode");
-} else {
-  document.body.classList.remove("dark-mode");
+  document.body.classList.add("dark");
 }
 
 toggleDarkButton.addEventListener("click", function () {
-  body.classList.toggle("dark-mode");
-  if (document.body.classList.contains("dark-mode")) {
-    var theme = "dark";
-  } else {
-    var theme = "";
-  }
-  // save theme to localStorage
-  localStorage.setItem("theme", theme);
-});
-
-toggleDarkButtonInMenu.addEventListener("click", function () {
-  body.classList.toggle("dark-mode");
-  if (document.body.classList.contains("dark-mode")) {
+  body.classList.toggle("dark");
+  if (document.body.classList.contains("dark")) {
     var theme = "dark";
   } else {
     var theme = "";
