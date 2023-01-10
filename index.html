@@ -24,42 +24,40 @@
 
   <body>
     <!-- #NAVBAR -->
-
-    <nav class="navbar">
-      <button class="toggle-nav-button">
-        <img
-            src="./assets/icons/icon-menu.svg"
-            class="menu-icon"
-            alt="dark icon"
-        />
-        <button1 class="toggle-dark-button-in-menu"
-          ><img
-            src="./assets/icons/icon-dark.svg"
-            class="setting-icon"
-            alt="dark icon"
-        /></button1>
-      </button>
-
-      <button class="toggle-dark-button">
+    <div class="header">
+      <li>
+        <button class="toggle-dark-button">
         <img
           src="./assets/icons/icon-dark.svg"
           class="setting-icon"
           alt="dark icon"
+          />
+        </button>
+      </li>
+      <li>
+        <button class="toggle-nav-button">
+      <img
+          src="./assets/icons/icon-menu.svg"
+          class="menu-icon"
+          alt="dark icon"
         />
       </button>
-
+      </li>
+    </div>
+    
+    <nav class="navbar">
       <ul class="navbar-list">
         <li class="navbar-item">
-          <a href="#contact" class="navbar-link">Contact</a>
+          <a href="index.html" class="navbar-link">Home</a>
         </li>
         <li class="navbar-item">
-          <a href="#about" class="navbar-link">About</a>
+          <a href="about.html" class="navbar-link">About</a>
         </li>
         <!--
       <li class="navbar-item"><a href="#" class="navbar-link">Resume</a></li>
       -->
         <li class="navbar-item">
-          <a href="#portfolio" class="navbar-link">Portfolio</a>
+          <a href="portfolio.html" class="navbar-link">Portfolio</a>
         </li>
       </ul>
     </nav>
@@ -191,213 +189,14 @@
 
           <section class="about-text">
             <p>
-              I'm an artist, or at least I'm trying to be one in the future. I
-              also like other creative stuff like design or music
+              Hey, my name is Dimitrj Kian and I use iamkredig as my nickname across social medias.
+              I'm an artist from Germany, or at least I'm trying to be one in the future. 
+              I also like other creative stuff like design or music
+              I’m also passionate about rock and metall music and I’m always curious to learn more when it comes to new technologies and creative drawing.
             </p>
           </section>
-
-          <!-- service -->
-
-          <section class="service">
-            <h3 class="service-title">What I'm doing</h3>
-
-            <ul class="service-list">
-              <li class="service-item">
-                <div class="service-icon-box">
-                  <img
-                    class="icon"
-                    src="./assets/icons/icon-brush.svg"
-                    alt="drawing icon"
-                    width="40"
-                  />
-                </div>
-
-                <div class="service-content-box">
-                  <h4 class="service-item-title">Drawing</h4>
-
-                  <p class="service-item-text">
-                    Trying to be kinda creative
-                  </p>
-                </div>
-              </li>
-
-              <li class="service-item">
-                <div class="service-icon-box">
-                  <img
-                    class="icon"
-                    src="./assets/icons/icon-world.svg"
-                    alt="internet icon"
-                    width="35"
-                  />
-                </div>
-
-                <div class="service-content-box">
-                  <h4 class="service-item-title">Web development</h4>
-
-                  <p class="service-item-text">
-                    Html code is fun
-                  </p>
-                </div>
-              </li>
-
-              <li class="service-item">
-                <div class="service-icon-box">
-                  <img
-                    class="icon"
-                    src="./assets/icons/icon-gamepad.svg"
-                    alt="gaming icon"
-                    width="40"
-                  />
-                </div>
-
-                <div class="service-content-box">
-                  <h4 class="service-item-title">Gaming</h4>
-
-                  <p class="service-item-text">Love to play some videogames</p>
-                </div>
-              </li>
-
-              <li class="service-item">
-                <div class="service-icon-box">
-                  <img
-                    class="icon"
-                    src="./assets/icons/icon-music_note.svg"
-                    alt="music icon"
-                    width="40"
-                  />
-                </div>
-
-                <div class="service-content-box">
-                  <h4 class="service-item-title">Learning guitar</h4>
-
-                  <p class="service-item-text">
-                    Just to have a break from all the displays
-                  </p>
-                </div>
-              </li>
-            </ul>
-          </section>
         </article>
-
-        <!-- #RESUME -->
-      <!-- 
-      <article class="resume" data-page="resume" id="resume">
-
-        <header>
-          <h2 class="article-title">Resume</h2>
-        </header>
-
-        <section class="timeline">
-
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <img class="icon" src="./assets/icons/icon-backpack.svg" width="25px">
-            </div>
-
-            <h3>Education</h3>
-          </div>
-
-          <ol class="timeline-list">
-
-            <li class="timeline-item">
-
-              <h4 class=" timeline-item-title">University school of the arts</h4>
-
-              <span>2007 — 2008</span>
-
-              <p class="timeline-text">
-                Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et
-                quas molestias
-                exceptur.
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="timeline-item-title">New york academy of art</h4>
-
-              <span>2006 — 2007</span>
-
-              <p class="timeline-text">
-                Ratione voluptatem sequi nesciunt, facere quisquams facere menda ossimus, omnis voluptas assumenda est
-                omnis..
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="timeline-item-title">High school of art and design</h4>
-
-              <span>2002 — 2004</span>
-
-              <p class="timeline-text">
-                Duis aute irure dolor in reprehenderit in voluptate, quila voluptas mag odit aut fugit, sed consequuntur
-                magni dolores
-                eos.
-              </p>
-
-            </li>
-          </ol>
-        </section>
-
-        <section class="timeline">
-
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <img class="icon" src="./assets/icons/icon-book.svg" width="25px">
-            </div>
-
-            <h3>Experience</h3>
-          </div>
-
-          <ol class="timeline-list">
-
-            <li class="timeline-item">
-
-              <h4 class="timeline-item-title">Creative director</h4>
-
-              <span>2015 — Present</span>
-
-              <p class="timeline-text">
-                Nemo enim ipsam voluptatem blanditiis praesentium voluptum delenit atque corrupti, quos dolores et qvuas
-                molestias
-                exceptur.
-              </p>
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="timeline-item-title">Art director</h4>
-
-              <span>2013 — 2015</span>
-
-              <p class="timeline-text">
-                Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et
-                quas molestias
-                exceptur.
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="timeline-item-title">Web designer</h4>
-
-              <span>2010 — 2013</span>
-
-              <p class="timeline-text">
-                Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et
-                quas molestias
-                exceptur.
-              </p>
-            </li>
-          </ol>
-        </section>
-      </article>
-  -->
-
+        
         <!-- #PORTFOLIO -->
 
         <article class="portfolio" data-page="portfolio" id="portfolio">

@@ -88,7 +88,7 @@ li {
 
 /*#REUSED STYLE*/
 
-body.dark-mode {
+body.dark {
   --headline-color: hsl(0, 0%, 90%);
   --text-color: hsl(0, 0%, 80%);
   --text-color-highlight: hsl(0, 0%, 7%);
@@ -338,34 +338,47 @@ main {
 /*#NAVBAR*/
 
 .navbar {
-  box-shadow: var(--box-shadow-1);
+  display: none;
+  margin: 0;
+  width: 100%;
+  height: 100px;
+  background:var(--bg-1);
   position: fixed;
-  display: flex;
   align-items: center;
-  justify-content: space-between;
   top: 0;
-  margin-left: 20px;
-  border-radius: 0 0 12px 12px;
-  background-color: var(--violett-accent);
-  height: var(--navbar-height);
-  width: calc(100% - 40px);
   z-index: 100;
 }
 
-.toggle-dark-button,
-.toggle-dark-button-in-menu {
-  z-index: 102;
-  margin-left: 8px;
-  width: 48px;
-  height: 48px;
-  background: var(--text-color-highlight);
-  cursor: pointer;
-  border-radius: 48px;
-  box-shadow: var(--box-shadow-1);
+.navbar.active{
+  display: block;
 }
 
-.toggle-dark-button {
+.navbar-list {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: var(--bg-1);
+  top: 100px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  display: none;
+  animation: flyin 0.5s ease-in-out;
+}
+
+@keyframes flyin {
+  0% {
+    transform: translateX (+100%);
+  }
+  100% {
+    transform: translateX (0);
+  }
+}
+
+.navbar.active .navbar-list {
   display: block;
+  animation: flyin 0.5s ease-in-out;
+  transition: var(--transition-2);
 }
 
 .setting-icon {
@@ -375,15 +388,60 @@ main {
   padding: 6px;
 }
 
+.header{
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  position: fixed;
+  gap: 15px;
+  right: 0;
+  left:0;
+  top: 20px;
+  z-index: 102;
+  padding: 0px 88px 0 98px;
+  transform: translateY(0);
+  transition: var(--transition-1-5);
+}
+
+.header.hidden{
+  transform: translateY(-500%);
+  transition: var(--transition-1-5);
+}
+
+.toggle-dark-button {
+  pointer-events: all;
+  display: block;
+  margin-left: 8px;
+  width: 48px;
+  height: 48px;
+  background: var(--bg-2);
+  cursor: pointer;
+  border-radius: 48px;
+}
+
 .toggle-nav-button {
-  display: none;
+  pointer-events: all;
   width: 48px;
   height: 48px;
   background: var(--violett-accent);
   cursor: pointer;
   border-radius: 48px;
-  box-shadow: var(--box-shadow-1);
-  align-items: center;
+  display: block;
+  transition: var(--transition-1);
+}
+
+.toggle-nav-button.active{
+  width: 300px;
+}
+
+.navbar-link {
+  color: white;
+}
+
+.navbar-link:hover {
+  color: black;
+  transition: var(--transition-1);
 }
 
 .menu-icon {
@@ -395,24 +453,22 @@ main {
   right: 0;
 }
 
-.navbar-list {
-  margin-right: 20px;
-  justify-content: flex-end;
-}
-
 .navbar-item {
   flex-direction: row;
   float: left;
   position: relative;
   margin: 0 15px;
   height: var(--navbar-height);
+
+  display: block;
+  width: 100%;
+  margin: 0;
 }
 
 .navbar-link {
   font-family: var(--ff-headline);
   font-size: var(--fs-4);
   font-weight: var(--fw-400);
-  color: var(--headline-color);
   text-transform: capitalize;
   display: flex;
   align-items: center;
@@ -420,17 +476,9 @@ main {
   height: var(--navbar-height);
 }
 
-.navbar-link.active,
-.navbar-link:hover {
-  color: var(--text-color-highlight);
-  transition: var(--transition-1);
-  box-shadow: var(--box-shadow-1);
-}
-
-.navbar.hidden {
-  top: 0;
-  transform: translateY(-100%);
-  transition: var(--transition-1);
+.navbar-item:hover {
+  background-color: var(--violett-accent);
+  transition: var(--transition-1-5)
 }
 
 /*#ABOUT*/
@@ -497,66 +545,6 @@ main {
 }
 
 .service-item-text {
-  line-height: 1.6;
-}
-
-/*#RESUME*/
-
-/*education and experience */
-
-/* .timeline { margin-bottom: 30px; }
-
-.timeline .title-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  margin-bottom: 25px;
-}
-
-.timeline-list {
-  font-size: var(--fs-6);
-  margin-left: 45px;
-}
-
-.timeline-item { position: relative; }
-
-.timeline-item:not(:last-child) { margin-bottom: 20px; }
-
-.timeline-item-title {
-  font-size: var(--fs-6);
-  line-height: 1.3;
-  margin-bottom: 7px;
-}
-
-.timeline-list span {
-  color: var(--violett-accent);
-  font-weight: var(--fw-400);
-  line-height: 1.6;
-}
-
-.timeline-item:not(:last-child)::before {
-  content: "";
-  position: absolute;
-  top: -25px;
-  left: -30px;
-  width: 1px;
-  height: calc(100% + 50px);
-}
-
-.timeline-item::after {
-  content: "";
-  position: absolute;
-  top: 5px;
-  left: -33px;
-  height: 6px;
-  width: 6px;
-  background: var(--violett-accent-gradient);
-  border-radius: 50%;
-}
-
-.timeline-text {
-  color: var(--text-color);
-  font-weight: var(--fw-300);
   line-height: 1.6;
 }
 
@@ -858,108 +846,6 @@ main {
 
   .skills-item:not(:last-child) {
     margin-bottom: 25px;
-  }
-}
-
-@media (max-width: 768px) {
-  .navbar {
-    box-shadow: none;
-    margin: 0;
-    width: 100%;
-    background: transparent;
-    height: 100px;
-  }
-
-  .toggle-dark-button {
-    display: none;
-  }
-
-  .toggle-dark-button-in-menu {
-    display: none;
-  }
-  .toggle-nav-button.active .toggle-dark-button-in-menu {
-    display: block;
-    z-index: 103;
-    margin-left: 4px;
-    height: 40px;
-    width: 40px;
-  }
-
-  .setting-icon {
-    display: block;
-    width: 40px;
-    height: 40px;
-    padding: 6px;
-  }
-
-  .navbar.active {
-    background: var(--bg-1);
-  }
-
-  .navbar-list {
-    position: fixed;
-    width: 100%;
-    background-color: var(--bg-1);
-    top: 100px;
-    left: 0;
-    right: 0;
-    text-align: center;
-    display: none;
-    animation: flyin 0.5s ease-in-out;
-  }
-
-  @keyframes flyin {
-    0% {
-      transform: translateX (+100%);
-    }
-    100% {
-      transform: translateX (0);
-    }
-  }
-
-  .navbar.active .navbar-list {
-    display: block;
-    animation: flyin 0.5s ease-in-out;
-
-    transition: var(--transition-2);
-  }
-
-  .navbar-item {
-    display: block;
-    width: 100%;
-    margin: 0;
-    box-shadow: var(--box-shadow-1);
-  }
-
-  .navbar-item:hover {
-    background-color: var(--violett-accent);
-  }
-
-  .toggle-nav-button {
-    position: fixed;
-    top: 30px;
-    right: 20px;
-    display: block;
-    z-index: 101;
-    transition: var(--transition-1);
-  }
-
-  .toggle-nav-button.active {
-    width: calc(100% - 40px);
-    margin-left: 20px;
-  }
-  .toggle-nav-button.active .menu-icon {
-    display: none;
-  }
-
-  .navbar-link {
-    color: white;
-  }
-
-  .navbar-link:hover {
-    color: black;
-    transition: var(--transition-1);
-    box-shadow: var(--box-shadow-1);
   }
 }
 
