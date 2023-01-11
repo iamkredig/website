@@ -75,15 +75,11 @@ for (const navbar_link0 of navbar_link) {
     elementDisableFunc(toggleNavButton);
   });
 }
-//buttons in menu
-const toggleDarkButtonInMenu = document.querySelector(
-  ".toggle-dark-button-in-menu"
-);
 
 // hide navbar on scroll
 let lastScrollY = window.scrollY;
 window.addEventListener("scroll", () => {
-  if (lastScrollY < window.scrollY) {
+  if (lastScrollY < window.scrollY & !toggleNavButton.classList.contains("active")) {
     header.classList.add("hidden");
   } else {
     header.classList.remove("hidden");
